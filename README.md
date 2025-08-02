@@ -41,7 +41,6 @@ package.json -> vite --port 8666 변경
 ---
 
 ## UI 참고
-## UI 참고
 
 <table style="width:100%; border-collapse:collapse;">
   <tr>
