@@ -38,6 +38,26 @@ client/
 package.json -> vite --port 8666 변경
 ```
 
-=======
-# client
->>>>>>> f1d25da314a0e893792559fa277a49546f8da81c
+---
+
+## UI 참고
+## UI 참고
+
+<table style="width:100%; border-collapse:collapse;">
+  <tr>
+    <td style="width:50%; padding:4px;">
+      <img src="https://github.com/user-attachments/assets/563901c1-2dee-4b62-ab1c-56df85286900" alt="1" style="width:100%; height:auto; display:block;" />
+    </td>
+    <td style="width:50%; padding:4px;">
+      <img src="https://github.com/user-attachments/assets/11f48bed-fca1-4eb1-b46c-f050666ed413" alt="2" style="width:100%; height:auto; display:block;" />
+    </td>
+  </tr>
+  <tr>
+    <td style="width:50%; padding:4px;">
+      <img src="https://github.com/user-attachments/assets/a93434c7-c354-4997-b092-4bcec5d632bc" alt="3" style="width:100%; height:auto; display:block;" />
+    </td>
+    <td style="width:50%; padding:4px;">
+      <img src="https://github.com/user-attachments/assets/eb09901a-ab2c-44bf-b6ee-d909e5d51ff4" alt="4" style="width:100%; height:auto; display:block;" />
+    </td>
+  </tr>
+</table>
