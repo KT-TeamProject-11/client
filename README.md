@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -37,3 +38,6 @@ client/
 package.json -> vite --port 8666 변경
 ```
 
+=======
+# client
+>>>>>>> f1d25da314a0e893792559fa277a49546f8da81c
