@@ -17,7 +17,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # 디렉터리 구조
 ```
-Frontend/
+client/
 ├─ public/               # 정적 에셋 (파비콘 등)
 ├─ src/
 │  ├─ components/        # 재사용 가능한 리액트 컴포넌트
