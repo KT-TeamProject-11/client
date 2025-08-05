@@ -15,7 +15,7 @@ const pages = {
   "오시는 길 & 연락처": {
     title: "오시는 길 & 연락처",
     content: [
-      "주소: (31121) 충남 천안시 동남구 청수14로 20",
+      "주소: (31121) 충남 천안시 동남구 청수14로 20(https://www.cheonanurc.or.kr/131)",
       "대표전화: 041-000-1234",
       "이메일: info@cheonanurc.or.kr",
     ].join("\n"),

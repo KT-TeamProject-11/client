@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 :root {
-  --brand-blue: #2E5A9C; /* KOSAF 메인 컬러 */
+  --brand-blue: #2E5A9C; 
   --hover-blue: #24477A;
   --background-color: #F0F2F5;
   --component-bg: #FFFFFF;
@@ -12,7 +12,6 @@
   --radius-m: 12px;
 }
 
-/* 전체 페이지 배경 및 중앙 정렬 */
 .chatbot-app-container {
   display: flex;
   justify-content: center;
@@ -22,9 +21,7 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 챗봇 위젯 컨테이너 */
 .chatbot-widget {
-  /* 기존 스타일 */
   width: 380px;
   height: 700px;
   display: flex;
@@ -33,16 +30,13 @@
   border-radius: var(--radius-l);
   box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-
-  /* --- 아래 중앙 정렬 코드를 추가/수정합니다 --- */
-  position: fixed; /* 화면에 고정 */
-  top: 50%;      /* 위에서부터 50% 위치 */
-  left: 50%;     /* 왼쪽에서부터 50% 위치 */
-  transform: translate(-50%, -50%); /* 위젯 크기의 절반만큼 다시 이동하여 완벽한 중앙 정렬 */
-  z-index: 1000; /* 다른 요소들 위에 표시되도록 설정 */
+  position: fixed; 
+  top: 50%;      
+  left: 50%;     
+  transform: translate(-50%, -50%); 
+  z-index: 1000; 
 }
 
-/* --- 헤더 --- */
 .chatbot-header {
   display: flex;
   align-items: center;
@@ -69,12 +63,11 @@
   align-items: center;
   justify-content: center;
 }
+
 .chatbot-header .icon-button:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-
-/* --- 메시지 영역 --- */
 .messages-container {
   flex-grow: 1;
   overflow-y: auto;
@@ -84,47 +77,74 @@
 
 .message-bubble {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: 12px;
-  max-width: 85%;
+  max-width: 100%;
+  position: relative;
 }
 
 .message-bubble.assistant {
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .message-bubble.user {
-  align-items: flex-end;
+  flex-direction: row-reverse;
 }
 
 .message-content {
+  position: relative;
   padding: 10px 14px;
   border-radius: var(--radius-l);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.4;
+  max-width: 60%;
+  word-break: break-word;
   white-space: pre-wrap;
-}
-
-.message-bubble.assistant .message-content {
-  background-color: var(--component-bg);
-  color: var(--text-primary);
-  border-top-left-radius: 4px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .message-bubble.user .message-content {
-  background-color: var(--brand-blue);
-  color: white;
-  border-top-right-radius: 4px;
+  background-color: white;
+  color: black;
 }
 
-.message-time {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-  padding: 0 6px;
+.message-bubble.assistant .message-content::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid white;
+  border-bottom: 7px solid transparent;
 }
 
-/* --- 시작 화면 & 메뉴 --- */
+.message-bubble.user .message-content::before {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-left: 7px solid white;
+  border-bottom: 7px solid transparent;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 .welcome-screen {
   padding: 20px;
   background-color: var(--background-color);
@@ -179,8 +199,6 @@
   color: var(--text-primary);
 }
 
-
-/* --- 입력 영역 --- */
 .input-area {
   display: flex;
   align-items: center;
@@ -191,43 +209,110 @@
 }
 
 .input-area textarea {
-  flex-grow: 1;
-  border: none;
-  background-color: var(--background-color);
-  border-radius: var(--radius-l);
-  padding: 10px 16px;
-  font-size: 15px;
+  flex: 1;
   resize: none;
-  max-height: 100px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 14px;
+  font-size: 15px;
   line-height: 1.4;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-.input-area textarea:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   outline: none;
-  box-shadow: 0 0 0 2px var(--brand-blue);
+  background: #f0f2f5;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0 8px;
 }
 
-.input-area .send-button {
-  background-color: var(--brand-blue);
+.plus-button {
+  background-color: #e0e0e0;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
   cursor: pointer;
-  color: white;
   transition: background-color 0.2s;
 }
 
-.input-area .send-button:hover {
-  background-color: var(--hover-blue);
+.plus-button:hover {
+  background-color: #d5d5d5;
 }
 
-.input-area .send-button:disabled {
-  background-color: #BCC0C4;
+.send-button {
+  background-color: var(--brand-blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:disabled {
+  background-color: #ccc;
   cursor: not-allowed;
+}
+
+.chat-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-menu button {
+  padding: 10px 6px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.chat-menu a.external-link-button {
+  padding: 10px 6px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-menu a.external-link-button:hover {
+  background-color: #eef2f7;
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+
+.chat-menu button:hover {
+  background-color: #eef2f7;
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
